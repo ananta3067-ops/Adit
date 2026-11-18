@@ -6,6 +6,8 @@ prepared_for: Dr. Aditya Soni, Founder & CEO, Aastik Ayurveda Pvt. Ltd.
 
 # Aastik Ayurveda — Founder & Investor Playbook
 
+> **Superseded in part (18 Nov 2026).** This playbook was written before reading the locked investor-readiness model. The locked plan uses the CiC sequential piperine-then-curcumin hypothesis (gate: ≥1.25× vs simultaneous dosing), the FSSAI route to allopathic doctors, and ₹10 Cr in two tranches at ₹60 Cr / ₹120 Cr pre-money. Where this file differs (Parts 1, 3 comparator, 5.2, 8.4, 9), the locked model and `AASTIK_Deck_and_5yr_Review.md` win. The lab-test, trial-checklist and FSSAI-claims sections still apply.
+
 **Prepared:** 18 Nov 2026  |  **For:** Dr. Aditya Soni (MD Ayurveda – Rasashastra & Bhaishajya Kalpana), Founder & CEO
 **Written as:** CEO (strategy), CFO (money), COO (execution), stress-tested through an investor red-team loop (Part 10).
 
