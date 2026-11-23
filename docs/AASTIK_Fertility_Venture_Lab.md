@@ -15,12 +15,15 @@ status: Working draft for investor-grade challenge. Not legal, tax or clinical a
 
 ### 0.1 What I could and could not inspect
 
+**Update, 23 Nov 2026 (second pass):** a dedicated network environment was created to reach these sites. Results:
+
 | Asset / source | Status | Consequence |
 |---|---|---|
-| Google Maps listing (`maps.app.goo.gl/WmjLY88Hthatshca6`) | **Not accessed.** The host is blocked by this session's network, and web search returned no indexed listing for "Aastik Ayurveda Katraj". | **I have not read a single review.** Every Google rating in this report is a template to fill, not a finding. |
-| Instagram `@aastikayurveda` | **Not accessed.** instagram.com is blocked. | No follower count, post count or engagement data. Section 1.3 is a framework with a scoring sheet. |
-| YouTube patient story (`_pVvoGZpF7Y`) | **Not accessed.** youtube.com is blocked, including the oEmbed endpoint. | I have **not** watched it. Section 1.4 gives the ethical and legal tests to run on it. |
-| gynoveda.com | **Not accessed directly.** The host is blocked. | Gynoveda facts come from press, aggregators and indexed shop pages, each cited with its date. |
+| Google Maps listing (`maps.app.goo.gl/WmjLY88Hthatshca6`) | **Partly accessed.** Google serves only its "limited view" to a signed-out cloud browser: name, rating, category, address, hours, phone, website and the latest owner post. The **review count and review texts are hidden** without sign-in. | Facts in 1.2. **I have still not read any individual review.** The 30–50 review analysis needs a Business Profile export or a signed-in screenshot set. |
+| Instagram `@aastikayurveda` | **Not accessed.** Every signed-out request is redirected to the login page. I did not try to bypass the login. | No follower, post or engagement data. 1.3 stays a framework. |
+| YouTube patient story (`_pVvoGZpF7Y`) | **Metadata only.** The oEmbed endpoint gave the title and channel. The watch page returned Google's bot-check page to this cloud IP, so I could not get the description, view count or transcript. A permission check also stopped a call to YouTube's internal player API. | Title: **"The Child We Prayed For: A Blind Couple's Journey with Ayurveda"**, channel `@aastikayurveda`. I have **not** watched it. See 1.4. |
+| aastikayurveda.com (linked from Maps) | **Accessed** (8 pages) | New 1.2A, with **one critical security finding**. |
+| gynoveda.com | **Accessed directly** (home, clinics, Pune clinics, how-it-works, product, refund policy, IVF comparison, about) | 4.1 rewritten from first-hand page text. |
 | Earlier Aastik documents in this repo | Read | Context on the founder, the CiC curcumin raise, and the clinic being located at/near ISKCON NVCC, Katraj. |
 | Web search (press, regulators, PubMed, NABH, listings) | Accessed | Everything else in this report. |
 
@@ -45,7 +48,7 @@ To complete Part 1 properly, I need one of the following: (a) a network allowanc
 2. **No base to scale from.** The clinic is about 9 months old and turns over about ₹2 L a month (unverified). Nothing yet proves that Aastik can acquire fertility patients at a viable cost.
 3. **Evidence is thin.** The Ayurveda infertility literature is mostly small, single-arm and unblinded (Section 2.4). Every marketing claim will have to be modest.
 4. **The law restricts advertising.** The Drugs & Magic Remedies (Objectionable Advertisements) Act 1954 schedules **"sterility in women"** and **"sexual impotence"**. You cannot advertise a drug as a remedy for them. Acquisition therefore has to be built on education, referrals and services, which is slower than Gynoveda-style performance ads.
-5. **Strong incumbents.** Gynoveda has capital, brand, ads and, from press reports, **two Pune clinics**. Indira IVF reports 165+ centres, including 7 in Pune with one in Baner. Nova and Oasis run clinics in Kondhwa/Lulla Nagar, about 5–8 km from Katraj.
+5. **Strong incumbents.** Gynoveda has capital, brand, ads, 50+ clinics and **3 Pune clinics, one in Kondhwa about 4–5 km from Katraj**, with a ₹2,000 couple consultation (gynoveda.com, 23 Nov 2026). Indira IVF reports 165+ centres, including 7 in Pune with one in Baner. Nova and Oasis run clinics in Kondhwa/Lulla Nagar, about 5–8 km from Katraj.
 6. **Founder dependency.** Delivery currently rests on one MD.
 7. **Asymmetric harm.** Delaying IVF for a 37-year-old woman with low AMH is a real clinical and reputational risk. A single public case can damage the brand.
 
@@ -61,14 +64,27 @@ To complete Part 1 properly, I need one of the following: (a) a network allowanc
 |---|---|
 | Entity | Aastik Ayurveda Pvt. Ltd. |
 | Founder | MD Ayurveda (Rasa Shastra & Bhaishajya Kalpana). This is pharmaceutics, not Prasuti Tantra/Stree Roga, which matters for clinical credibility (see 1.6). |
-| Centre | Aastik Ayurveda & Panchakarma Centre, Katraj, Pune. Earlier repo documents place it at or near ISKCON NVCC (Katraj–Kondhwa Road, Tilekar Nagar, 411048). **Verify the address against the Google listing.** |
+| Centre | **Aastik Ayurveda & Panchakarma Centre (आस्तिक आयुर्वेद & पंचकर्म सेंटर), ISKCON NVCC Temple Campus, Tilekar Nagar, Katraj, Pune 411048** (Plus code CVXJ+F8). Confirmed from the Google Maps listing. |
 | Operating since | Feb 2026 |
 | Revenue | ~₹2 L/month (unverified, user-supplied) |
 | Existing product capability | Nine licensed SKUs and formulation expertise (from the earlier playbook). This is a real **cost advantage on medicines**, which are the largest direct cost line in every package below. |
 
-### 1.2 Google Maps listing: audit template (data not accessed)
+### 1.2 Google Maps listing
 
-Fill this in from the Business Profile. **Do not publish any score until it is filled in.**
+**What the listing shows** (Google's limited signed-out view, accessed 23 Nov 2026):
+
+| Field | Value | Comment |
+|---|---|---|
+| Name | Aastik Ayurveda & Panchakarma Centre / आस्तिक आयुर्वेद & पंचकर्म सेंटर | Good: the bilingual name helps local search |
+| Rating | **4.9★** | Strong. The review count is hidden in the limited view, so it is unknown. |
+| Category | **"Alternative medicine practitioner"** | **Weak.** Change the primary category to "Ayurvedic clinic" and add "Panchakarma centre" as secondary. The "alternative medicine" label hurts credibility with gynaecologists and premium patients. |
+| Address | ISKCON NVCC Temple Campus, Tilekar Nagar, Katraj, Pune 411048 | The temple campus is a strong landmark and trust signal for one audience, and neutral or negative for a secular, cosmopolitan one (see 7.5) |
+| Hours | Opens 9:30 AM (shown on a Monday, "Opens Tue"), so **closed on Mondays** | Fine. Fertility couples will want evening and Sunday slots. |
+| Contact | +91 70572 05677, a WhatsApp link, aastikayurveda.com | Good: WhatsApp is the right conversion path |
+| Latest owner post | "Take a break from daily stress… relaxation, better sleep, mental peace, overall wellness", posted 9 hours before access | Active posting, but **wellness/relaxation positioning, not clinical** |
+| Photos | A photos section exists; count not visible | |
+
+**Still needed** (export it, or take screenshots while signed in): review count, star distribution, the latest 30–50 reviews, owner reply rate, and photo count. Use the template below.
 
 | Metric | Value | Benchmark to compare against |
 |---|---|---|
@@ -82,6 +98,22 @@ Fill this in from the Business Profile. **Do not publish any score until it is f
 | Services listed | _?_ | Remove any disease-cure wording. |
 
 **Review coding.** Tag each review on Doctor explanation, Results, Therapist skill, Cleanliness, Waiting time, Price/value, Staff behaviour and Follow-up. Count positive and negative mentions per tag. The two tags that predict fertility conversion are **doctor explanation** and **follow-up**.
+
+**Benchmark that matters most:** Gynoveda's **Kondhwa clinic (Lulla Nagar, 99 Avenue Complex)** is about 4–5 km from your centre. Its listing shows **4.8★**, and the brand shows **4.7★ across 27,433+ Google reviews** (gynoveda.com, accessed 23 Nov 2026). Your 4.9★ competes on quality, not volume.
+
+### 1.2A Website audit: aastikayurveda.com (accessed 23 Nov 2026)
+
+| Finding | Severity | Detail | Fix |
+|---|---|---|---|
+| **The blog is full of casino/gambling spam** | **CRITICAL, fix this week** | All 12 posts visible on `/blog/` are online-casino articles in Croatian, Greek, Swedish, Dutch, Turkish and English (e.g. "Unlocking Profit: Discover the Most Lucrative Casino Games Today", "Discover the Exciting World of Amazon Slots UK"). All are attributed to the author account "Sneha Loni", with no Ayurveda content. This usually means a **compromised WordPress account or plugin, or a paid-link injection**. | (1) Take the blog offline. (2) Have the developer (footer: "Yuvmedia") audit admin users, reset all passwords, enable 2FA, update or remove plugins, and scan for injected code. (3) Delete the spam posts and request removal in Google Search Console. (4) Confirm whether "Sneha Loni" is a real team member whose account was taken over. Until it is clean, **no gynaecologist, investor or premium couple should be sent to this site**, and Google may down-rank or flag it. |
+| Inconsistent trust numbers | High | The homepage claims "**10,000+ Patients**", "4.9/5 Rating" and "**⭐ 5.0+ Patient Reviews**" (a meaningless figure), while the animated counters render as "**0+ Years Experience / 0+ Patients Treated / 0+ Products**". The centre opened in Feb 2026. | If 10,000+ is a career total, say "Dr. Soni has treated 10,000+ patients across his career". Otherwise remove it. Fix the counters. Use the live Google review count. An unverifiable number is a consumer-protection risk (CCPA misleading-ad guidelines). |
+| "Evidence-Based Ayurveda" positioning | Positive, if substantiated | The hero says "Evidence-Based Ayurveda for Modern Healthcare", with DPIIT-recognised startup and IIT Delhi alumni badges. Real clinical practice. | This is the right brand promise for Aastik Fertility, but it **must be backed by an outcomes page**. Today the site has none. |
+| Fertility already listed | Opportunity | Clinical protocols list "**PCOS & Women's Hormonal Health**" and "**Male Fertility & Reproductive Health**"; the ticker shows "MALE FERTILITY"; the shop sells **LEUCOJIT® (women's health)**. | Fertility is a natural extension of the existing brand, which supports the endorsed sub-brand approach (1.3). |
+| Claim wording | Medium | Therapy copy uses "**deep detoxification and systemic rejuvenation**" (Abhyanga) and "**Detoxifying** decoction-based therapy" (Niruha Basti). Shop product names pair with diseases ("Hyperacidity & Gastritis", "Constipation", "Immunity & Viral Fever Support"). | Replace "detoxification" with classical terms plus a neutral description. Check SKU disease wording against the DMR Act and the product licences. |
+| No prices for therapies | Medium | Every therapy uses "ENQUIRE NOW" | For a premium fertility programme, publish package prices. Transparency is a differentiator against Gynoveda's "call us". |
+| Team | Positive / gap | Dr. Aditya Soni (BAMS, MD Ayurveda; interests: Panchakarma, gut, lifestyle disease); Dr. Nachiket Patil and Dr. Hema B. C. (both MD Manasa Roga, pursuing). Advisory council (IGAC): Dr. Amit Deshpande (Agnivesh Healthcare, WHO-GMP), Dr. Suhas Shetty (Principal, KLE Ayurveda College, Belgaum), Dr. Soumya Basu, Dr. Pavel Peresypkin. | **No Prasuti Tantra/Stree Roga specialist and no OBG.** Confirms the gap in 1.6. The two counsellors (Manasa Roga) are a real asset for the stress and counselling component of the fertility programme. |
+| Religious framing | Note | The Therapies page opens with a Radha–Krishna shloka; the Contact page says "Visit Our Sanctuary… serene spiritual ambiance of ISKCON NVCC". | Authentic for the current audience. Keep the Aastik Fertility pages clinically neutral (7.5). |
+| Product pricing | Info | 9 SKUs at ₹210–360 per pack (e.g. VAJRAORTHO™ ₹360/30 tablets) | Confirms low-cost in-house medicines, which supports the medicine cost assumptions in 5.1 |
 
 ### 1.3 Instagram: audit framework (data not accessed)
 
@@ -112,9 +144,16 @@ Fill this in from the Business Profile. **Do not publish any score until it is f
 6. Outcome transparency posts, once data exists.
 7. Couple-together content: diet, sleep, stress, alcohol and smoking (this is where the evidence is strongest).
 
-### 1.4 YouTube patient story: assessment protocol (video not watched)
+### 1.4 YouTube patient story: assessment protocol (title only; video not watched)
 
-I have not watched the video. Your brief hints that it may describe preventing an inherited condition. If so, apply these tests before using it anywhere.
+**Retrieved:** title **"The Child We Prayed For: A Blind Couple's Journey with Ayurveda"**, channel `@aastikayurveda` (YouTube oEmbed, 23 Nov 2026). The description, views, duration and transcript were not retrievable.
+
+**What the title implies, and why it needs care:** your brief says not to present the story as proof that Aastik can "prevent inherited conditions". Together with a title about a **blind couple**, that suggests the video may imply Ayurveda helped them have a **sighted child**, or influenced whether a hereditary condition was passed on. If so, this is the highest-risk claim in the whole business:
+- Whether a child inherits a condition depends on the genetics of that specific condition (many causes of blindness are not hereditary at all). **No Ayurvedic preconception care has been shown to change genetic transmission.**
+- It also involves **disability-sensitive representation**. Frame the couple's courage and parenthood, not "overcoming" blindness through treatment.
+- The safe framing: "A couple's journey to parenthood, and how we supported them". Do not claim a link between the intervention and the child's health status. Add an on-screen disclaimer, and have a genetic counsellor or OBG review it if inheritance is mentioned at all.
+
+Apply these tests before using it anywhere:
 
 | Test | Rule |
 |---|---|
@@ -133,9 +172,10 @@ Scale 1–5. Pre-filled entries are **my prior expectations, not observations**,
 | Asset | Brand value | Patient trust | Marketing potential | Clinical credibility | Conversion potential | Must improve |
 |---|---|---|---|---|---|---|
 | Katraj clinic (physical) | 3 E | 3 E | 3 E | 3 E | 4 E | A procedure room fit for sterile procedures, a couple-consult room, waiting-area privacy |
-| Google listing | _?_ | _?_ | _?_ | _?_ | _?_ | Fertility-relevant reviews, photos, Q&A |
-| Instagram | _?_ | _?_ | _?_ | _?_ | _?_ | Founder on camera, a separate fertility handle |
-| YouTube story | _?_ | _?_ | 3 E | 1 E (testimonial only) | 3 E | Consent, documentation, claim removal |
+| Google listing | 4 (bilingual name, landmark) | 4 (4.9★; count unknown) | 3 | 2 ("Alternative medicine practitioner" category) | 4 (WhatsApp, phone) | Change category; fertility-relevant reviews, photos and Q&A; review volume against Gynoveda Kondhwa |
+| Website | 2 | **1 (casino spam on the blog)** | 2 | 2 (claims unsubstantiated, counters at "0+") | 2 | **Remove the spam and secure the site first**; fix claims; add an outcomes page and prices |
+| Instagram | _?_ (login wall) | _?_ | _?_ | _?_ | _?_ | Founder on camera, a separate fertility handle |
+| YouTube story | 3 E (title is emotionally strong) | 3 E | 3 E | 1 (testimonial only) | 3 E | Consent, documentation, **no hereditary-outcome implication**, disability-sensitive edit |
 | Founder (MD, Rasa Shastra) | 4 E | 4 E | 4 E | 3 E | 4 E | Add a Prasuti Tantra/Stree Roga consultant and a visiting gynaecologist |
 | In-house formulations | 3 E | 3 E | 3 E | 3 E | 3 E | COA per batch, shelf-life data |
 
@@ -338,6 +378,31 @@ It also tells you nothing about the actual purchase driver: **months trying to c
 
 ### 4.1 Gynoveda (direct, scaled Ayurveda fertility)
 
+**First-hand findings from gynoveda.com (accessed 23 Nov 2026):**
+
+| Item | What the site says |
+|---|---|
+| Footprint | "**50+ Clinics Across India, 100+ Doctors**"; Mumbai 6, Delhi 4, Bengaluru 3, plus Jaipur, Vadodara, Nagpur, Amritsar, Hyderabad and others. About page: "**200+ chain of ayurveda fertility clinics planned in the next 3 years**". HQ Mumbai, founded 2019. |
+| **Pune** | **3 clinics: Viman Nagar** (Nyati Empress, near Phoenix Marketcity), **Pimple Saudagar** (PK Hillcrest) and **Kondhwa** (99 Avenue Complex, Lulla Nagar, next to Atithi Hotel). Each shows 4.8★. Open 10 AM–8 PM, Tue–Sun. **Kondhwa is about 4–5 km from Aastik Katraj.** |
+| Consultation | **₹2,000** in Pune ("50+ health parameters, root cause analysis, diet suggestions"). "**Pay after consultation**". "**40-min consultation**", "**Consult as couple**". Booking by call-back (7240000700). |
+| Model | 3 steps: doctor consult → Ayurveda tablets ("Improve egg quality. Increase sperm count.") → Gynoveda diet + follow-up. Online or in-clinic. |
+| Hero fertility product | "Fertility Ayurvedic Tablets", **Putranjivak + Shivlingi + 15 herbs** (incl. Shilajit, Shatavari, Ashwagandha, Ashoka, Lodhra, Shuddha Kasis, Bang Bhasma, Shuddha Tankan). **1 month ₹2,063; 2 months ₹3,375; 3 months ₹4,125** (MRP ₹7,031); 2,231+ reviews; dose 2 tablets twice daily; "take for minimum 6 months". The PCOS range starts at ₹2,400. |
+| Who they target | "Couples planning a baby… Failed IUI, IVF history… Advised to do IUI, IVF… Low AMH… One Tubal Block… Pregnancy Loss" |
+| Scale claims | "4.7★ / 27,433+ Google Reviews", "6L+ Happy Customers", "**20000+ Babies born naturally**" (source: "Gynoveda internal outcome study"), "**40% Male Infertility Cases Solved**", brand ambassador Taapsee Pannu since 2023, a large Facebook community ("Circle of Sisterhood") |
+| **Claim inconsistency** | The clinic page headline says "**85%\* Women Conceived in 3 Months**, Source: EJPMR, 2023". The FAQ on the same page and the product page describe the same study as "**85% of women… ovulated on time**". **An ovulation statistic is presented as a conception statistic.** |
+| Ingredient claims | "Putranjivak **ensures healthy implantation**", "Shivlingi **improves egg quality**", "Shatavari **prevents early pregnancy loss**" |
+| IVF positioning | Positions itself **as an alternative to IVF**: "Want to Conceive without IVF?", stories titled "No IVF…", "Told to Try IVF, She Chose Ayurveda". The comparison page lists IVF side effects as "Severe / Surgical / High" and Ayurveda as "**Hormonal Changes: None**", and labels months 0–3 "**Herbal Detox**". It quotes Ayurveda cost as **₹3,000–30,000** for 3–12 months against ₹1.5–2.5 L per IVF cycle. |
+| Low AMH / tubal advice | Product FAQ: low AMH → "chances… compromised a bit", take the tablets. One blocked tube → can take; both blocked → "will not help". |
+| **Refund policy** | Returns only for damaged, incomplete, wrong or wrong-quantity **unused** products, notified within 5 business days. **Consumed product: no refund**; COD orders only "in exceptional cases"; "All decisions… shall be final and binding. You agree not to challenge such a decision." |
+
+**Implications for Aastik:**
+1. Gynoveda **already runs a couple-consultation clinic model in Pune, including 4–5 km from Katraj**. Aastik is not first to clinic-based Ayurveda fertility. It must win on **procedures, a published outcome method, the IVF referral clock and transparent refunds**.
+2. Its "ovulation → conception" headline, "no hormonal changes", "prevents pregnancy loss" and IVF-alternative framing are the exact claims Aastik should **publicly not make**. Being visibly more careful is a credible position with gynaecologists.
+3. The ₹2,000 consult and a ₹4,125 three-month medicine pack set the **local price anchor**. Aastik's ₹2,500–3,000 first couple consultation is acceptable if it is longer (75 min vs 40) and is credited on enrolment.
+4. Its refund terms are restrictive and non-negotiable. Aastik's pro-rata refund and pregnancy-conversion policy (5.2) is a concrete, advertisable difference.
+
+**Third-party data:**
+
 | Item | Finding | Source / date |
 |---|---|---|
 | Founders | Rachana Gupta and Vishal Gupta | FemTech Insider; Entrepreneur India, Mar 2023 |
@@ -382,7 +447,7 @@ It also tells you nothing about the actual purchase driver: **months trying to c
 | Duration | 3 or 6 months, fixed review points | 3–12 months | 4–6 weeks per cycle | Open-ended |
 | Medicines | Own GMP-made SKUs, batch COA | Own branded tablets | Allopathic hormones | Mixed brands |
 | Panchakarma | Yes, only on documented indication | No or limited | No | Yes, often routine |
-| Physical clinics | 1 (Katraj) | ≥2 in Pune; target 100 | 7+ Indira, 3 Nova in Pune | 1 each |
+| Physical clinics | 1 (Katraj) | 50+ nationally, **3 in Pune** (Viman Nagar, Pimple Saudagar, Kondhwa); 200+ planned | 7+ Indira, 3 Nova in Pune | 1 each |
 | Doctor involvement | Founder MD + Prasuti Tantra consultant + visiting OBG | Tele-consult BAMS doctors | REI specialists, embryologists | One BAMS/MD |
 | Diagnostics | **Mandatory couple work-up** (via partner lab) | Patient-reported or optional | Full | Variable |
 | IVF integration | **Written referral clock + co-management** | Positioned as an alternative | Core | Usually none |
@@ -560,7 +625,7 @@ It also tells you nothing about the actual purchase driver: **months trying to c
 
 | Location | Catchment fit | Competition | Rent | Role |
 |---|---|---|---|---|
-| **Katraj** (existing) | South Pune, mid-income families, Kondhwa/Bibwewadi/Dhankawadi/Satara Road; adjacent to ISKCON NVCC footfall; Bharati Vidyapeeth hospital nearby | Oasis and Nova at Kondhwa–Lulla Nagar (~5–8 km); Ayurgarbh (Undri) | Low | **Pilot and procedure hub** |
+| **Katraj** (existing) | South Pune, mid-income families, Kondhwa/Bibwewadi/Dhankawadi/Satara Road; adjacent to ISKCON NVCC footfall; Bharati Vidyapeeth hospital nearby | **Gynoveda Kondhwa (Lulla Nagar, ~4–5 km)**; Oasis and Nova at Kondhwa–Lulla Nagar (~5–8 km); Ayurgarbh (Undri) | Low | **Pilot and procedure hub** |
 | **Baner / Aundh** | Most affluent western belt, young professionals | Indira IVF Baner, Nova Baner, Aatreya Ayurvedic Infertility Clinic, Progenesis (Aundh) | High | **Location 2** (Model B), ideally as a consult-only satellite first |
 | **Wakad / Hinjewadi** | 3 L+ IT workforce, young couples, high planner (segment A) density | Fewer specialist fertility clinics (verify) | Medium–high (~₹69/sq ft Grade-A) | Corporate wellness talks; a later satellite |
 | **Kharadi / Viman Nagar** | IT plus NRIs, airport access (segment S6) | Nova Kharadi | High | Location 3 |
@@ -656,6 +721,13 @@ It also tells you nothing about the actual purchase driver: **months trying to c
 ---
 
 ## 10. SOURCES (accessed via web search, 23 Nov 2026)
+
+**First-hand page reads (headless browser, 23 Nov 2026):**
+- Google Maps listing (limited view): [maps.app.goo.gl/WmjLY88Hthatshca6](https://maps.app.goo.gl/WmjLY88Hthatshca6)
+- YouTube oEmbed for [_pVvoGZpF7Y](https://youtu.be/_pVvoGZpF7Y) (title and channel only)
+- Aastik site: [home](https://aastikayurveda.com/), [therapies](https://aastikayurveda.com/therapies/), [about](https://aastikayurveda.com/about-us/), [IGAC](https://aastikayurveda.com/innovation-growth-advisory-council-igac/), [blog (spam)](https://aastikayurveda.com/blog/), [shop](https://aastikayurveda.com/shop/)
+- Gynoveda: [home](https://gynoveda.com/), [clinics](https://gynoveda.com/pages/gynoveda-clinic-near-me/), [Pune clinics](https://gynoveda.com/pages/clinics-available/pune/), [how it works](https://gynoveda.com/pages/gynoveda-fertility-clinic-how-it-works/), [fertility tablets](https://shop.gynoveda.com/products/fertility-support-ovulation-for-pregnancy), [refund policy](https://gynoveda.com/pages/returns-refunds-policy/), [IVF vs Ayurveda](https://gynoveda.com/compare-ivf-vs-ayurveda/), [about](https://gynoveda.com/pages/about/)
+- Not readable: Instagram (login wall), YouTube watch page (bot check), Google reviews (sign-in required)
 
 **Gynoveda**
 - Series A: [Entrepreneur India](https://india.entrepreneur.com/news-and-trends/gynoveda-raises-10-million-in-series-a-funding-round/447816), [Inc42](https://inc42.com/buzz/fireside-ventures-backed-gynoveda-secures-10-mn-funding-to-strengthen-its-offline-play), [FemTech Insider](https://femtechinsider.com/gynoveda-series-a/), [Indian Startup News](https://indianstartupnews.com/news/femtech-startup-gynoveda-raises-10m-in-a-series-a-round-led-by-india-alternatives-fund)
