@@ -24,7 +24,7 @@ status: Working draft for investor-grade challenge. Not legal, tax or clinical a
 | YouTube patient story (`_pVvoGZpF7Y`) | **Metadata only.** The oEmbed endpoint gave the title and channel. The watch page returned Google's bot-check page to this cloud IP, so I could not get the description, view count or transcript. A permission check also stopped a call to YouTube's internal player API. | Title: **"The Child We Prayed For: A Blind Couple's Journey with Ayurveda"**, channel `@aastikayurveda`. I have **not** watched it. See 1.4. |
 | aastikayurveda.com (linked from Maps) | **Accessed** (8 pages) | New 1.2A, with **one critical security finding**. |
 | gynoveda.com | **Accessed directly** (home, clinics, Pune clinics, how-it-works, product, refund policy, IVF comparison, about) | 4.1 rewritten from first-hand page text. |
-| Earlier Aastik documents in this repo | Read | Context on the founder, the CiC curcumin raise, and the clinic being located at/near ISKCON NVCC, Katraj. |
+| Earlier Aastik documents in this repo | Read | Founder background and clinic location only. **Aastik Fertility is a separate business** from the curcumin venture (see 0.4). |
 | Web search (press, regulators, PubMed, NABH, listings) | Accessed | Everything else in this report. |
 
 To complete Part 1 properly, I need one of the following: (a) a network allowance for those hosts, or (b) you paste in a Google Business Profile export, Instagram Insights screenshots for the last 90 days, and the YouTube video's transcript plus its Studio analytics. Either takes about 30 minutes.
@@ -33,7 +33,7 @@ To complete Part 1 properly, I need one of the following: (a) a network allowanc
 
 | Question | Answer |
 |---|---|
-| Is "Aastik Fertility" investable **today** at ₹10 Cr? | **No.** There is no fertility-specific revenue, no outcome data and no proof of acquisition cost, and the founder is already raising ₹10 Cr for the CiC curcumin programme. An investor would see two half-funded companies. |
+| Is "Aastik Fertility" investable **today** at ₹10 Cr? | **No.** There is no fertility-specific revenue, no outcome data and no proof of acquisition cost, and the clinic it would pilot in is only about 9 months old. Raise after the pilot gate (Section 9.3), into a new entity (0.4). |
 | Is it worth a **₹12–18 lakh pilot inside the Katraj clinic**? | **Yes**, under the conditions below. The downside is small, and the data it produces is what makes the business financeable later. |
 | Best initial wedge | **Neither "body detox" nor IVF support.** Start with a **time-boxed couple programme for couples trying to conceive (TTC) for 6–24 months**, with the woman under 35 and no absolute indication for IVF. Run it with **mandatory diagnostics, male-partner evaluation and a hard referral clock.** Preconception care for couples not yet trying becomes the lower-priced, content-led entry tier. |
 | Your ₹1.0 L / ₹1.5 L prices | **₹1.5 L for Ayurveda-led infertility support fails** against a ₹1.0–1.8 L IVF cycle and a ₹18–48 k Gynoveda kit. Recommended prices: **₹39 k (3-month), ₹79 k (6-month) and ₹1.25 L (Signature, high-touch).** |
@@ -44,7 +44,7 @@ To complete Part 1 properly, I need one of the following: (a) a network allowanc
 
 ### 0.3 Investment Committee: reasons to reject (stated plainly)
 
-1. **Focus split.** The founder is mid-raise for a curcumin pharmacokinetic (PK) platform (`AASTIK_Deck_and_5yr_Review.md`). A second, operationally heavy vertical in the same 12 months is the single most likely cause of failure for both.
+1. **Founder bandwidth.** Aastik Fertility is a separate company, but the founder still runs the Aastik Ayurveda clinic and the products business. Investors will ask who works full-time on Aastik Fertility. The answer has to be a named founder or CEO with time committed in writing.
 2. **No base to scale from.** The clinic is about 9 months old and turns over about ₹2 L a month (unverified). Nothing yet proves that Aastik can acquire fertility patients at a viable cost.
 3. **Evidence is thin.** The Ayurveda infertility literature is mostly small, single-arm and unblinded (Section 2.4). Every marketing claim will have to be modest.
 4. **The law restricts advertising.** The Drugs & Magic Remedies (Objectionable Advertisements) Act 1954 schedules **"sterility in women"** and **"sexual impotence"**. You cannot advertise a drug as a remedy for them. Acquisition therefore has to be built on education, referrals and services, which is slower than Gynoveda-style performance ads.
@@ -53,6 +53,18 @@ To complete Part 1 properly, I need one of the following: (a) a network allowanc
 7. **Asymmetric harm.** Delaying IVF for a 37-year-old woman with low AMH is a real clinical and reputational risk. A single public case can damage the brand.
 
 **What would flip the IC to "invest":** 50 or more enrolled couples, under 15% refunds or drop-outs, audited CAC below 20% of ticket, a published 6-month outcome report, and at least 5 active gynaecologist or IVF referral partners. Sections 8–9 set this out as a 9-month gate.
+
+### 0.4 Entity structure: Aastik Fertility is a separate business
+
+The founder's instruction (23 Nov 2026): **Aastik Fertility is entirely separate from the curcumin venture.** It gets its own entity, its own investors and its own pitch.
+
+| Item | Recommendation |
+|---|---|
+| Legal form | **Private Limited Company, not an LLP**, if you plan to raise equity. Indian VCs and angel networks invest through equity or CCPS (compulsorily convertible preference shares) in a company. LLPs cannot issue shares or ESOPs, and foreign investment into LLPs has extra conditions. An LLP suits only a two- or three-doctor partnership that will never raise money. |
+| Name | e.g. "Aastik Fertility Pvt Ltd" or a distinct brand. Run trademark searches in classes 44 (medical services) and 5 (medicines) first. |
+| Relationship with Aastik Ayurveda Pvt Ltd | Written, arm's-length agreements: (1) a **brand licence** (or a fully distinct brand); (2) a **supply agreement** for medicines at a documented transfer price; (3) a **sublease or service agreement** for using the Katraj clinic and therapy rooms. Investors will treat every one of these as a related-party transaction to diligence. |
+| Founder | DPIIT startup recognition for the new entity. Founder shares with 4-year vesting and a 1-year cliff (investors will ask). Reserve a 10% ESOP pool for a second doctor, a clinic head and a growth lead. |
+| Clinical licences | They follow the entity: establishment registration, biomedical waste authorisation and NABH entry-level certification in the new company's name once it runs the service. |
 
 ---
 
@@ -262,7 +274,7 @@ Scale 1–5; higher is better. For regulatory risk and CAC, a higher score means
 | Uttarbasti opens tubes | Single-arm studies, n ≈ 15–16 | Do not claim it |
 | Improves IVF success | No adequate evidence found | Do not claim it |
 
-**This is also the opportunity.** An Ayurveda fertility provider that publishes honest, denominator-based outcomes would be **the only one doing so**, and that is a moat. Register an observational outcomes study on CTRI, with ethics committee approval through a partner institution. Your IIT Delhi and AIIA links from the CiC programme can host it.
+**This is also the opportunity.** An Ayurveda fertility provider that publishes honest, denominator-based outcomes would be **the only one doing so**, and that is a moat. Register an observational outcomes study on CTRI, with ethics committee approval through a partner institution. Your IIT Delhi and AIIA academic links can help find an ethics committee and co-investigators.
 
 ---
 
@@ -694,7 +706,7 @@ It also tells you nothing about the actual purchase driver: **months trying to c
 | Year-1 effective CAC | ₹15 L ÷ 63 ≈ **₹23.8 k** (should fall to ₹12–15 k by month 12) |
 | **Month-12 run-rate** | Bookings ₹6.8 L − direct ₹2.3 L − fixed ₹2.45 L ≈ **+₹2.0 L/month** |
 
-**Funding:** clinic cash flow + founder. **Do not raise external money for this pilot**, and do not mix it into the CiC ₹10 Cr round. If investors ask, present fertility as a **revenue-generating clinical asset and future real-world-evidence site**, not a second venture.
+**Funding:** founder capital, friends & family and grants into the **new Aastik Fertility entity**. Raise from outside investors only after the month-9 gate. The curcumin venture's money and investors stay completely separate (0.4).
 
 ### 9.3 Gate at month 9 (go / no-go for Model B)
 
